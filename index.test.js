@@ -1,10 +1,6 @@
-const captureTest = async (url) => {
+test('ScreenShot Test', async () => {
     const page = await browser.newPage()
-    await page.goto(url)
+    await page.goto('https://www.google.com/')
     const image = await page.screenshot();
     await expect(image).toMatchImageSnapshot();
-}
-
-test('ScreenShot Test', async () => {
-    captureTest('https://www.google.com/')
 })
